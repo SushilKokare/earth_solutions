@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CSS Pseduo-classes</title>
+	<style type="text/css">
+		a:link{
+			color: red;
+		}
+		a:visited{
+			color: green;
+		}
+		a:hover{
+			color: orange;
+		}
+		a:active{
+			color: brown;
+		}
+		a.highlight:hover{
+			color: yellow;
+		}
+		./*mydiv{
+			height: 100px;
+			width: 100px;
+			background-color: yellow;
+		}
+
+*/		p {
+			display: none;
+			background-color: orange;
+			padding: 20px;
+		}
+		div:hover p{
+			display: block;
+		}
+	</style>
+</head>
+<body>
+<a href="#"> Click Me! </a>
+<div class="mydiv">Hover over this text!
+<p>This is tooltip</p>
+</div>
+</body>
+</html>

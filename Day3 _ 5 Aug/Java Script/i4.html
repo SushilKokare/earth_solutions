@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JS Form Validation</title>
+</head>
+<body>
+<form id='loginForm'>
+	role : &nbsp; &nbsp; &nbsp; <input type="text" name="role" value='student' readonly disabled> <br><br>
+	email : &nbsp; &nbsp; &nbsp;<input type="text" name="email" placeholder="email" required> <br> <br>
+	password : <input type="text" name="password" placeholder="password"> <br> <br>
+	<button type="submit" onclick="return check()">Login</button>  
+	<!-- <input type="submit" value="submit"> -->
+</form>
+<script type="text/javascript">
+	function check(){
+		let em = document.forms['loginForm']['email'].value;
+		let ps = document.forms['loginForm']['password'].value;
+		let msg = '';
+		if(em=='')
+		{
+			msg += 'please enter email '
+		}
+		if(ps=='')
+		{
+			msg += 'please enter password '
+		}
+		if(em=='' || ps=='')
+		{
+			alert(msg);
+			return false;
+		}
+		
+	}
+</script>
+</body>
+</html>

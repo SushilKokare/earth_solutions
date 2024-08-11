@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/ag-grid-community/dist/ag-grid-community.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/ag-grid-community@31.2.1/dist/ag-grid-community.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.src.js"></script>
+</head>
+<body>
+    <!-- <h1>AG GRID</h1>
+    {% for row in data %}
+    <p> {{row}}</p>
+    {% endfor %} -->
+    <!-- {{data}} -->
+    <div id="myGrid" class="ag-theme-quartz" style="height: 300px;">
+    </div>
+
+<div id='conatiner' style="width: 100%; height:400px;"></div>
+    <script> 
+       
+        console.log('in html')
+        const dd = JSON.parse('{{ data|escapejs }}');
+        print(dd)
+            var gridOptions ={
+                columnDefs :[
+                    {field : "make"},
+                    {field:"model"},
+                    {field:"price"},
+                    {field:"electric"}
+                ],
+                rowData : dd
+            }
+            // console.log(gridOptions)
+    
+            const myGridElement = document.querySelector('#myGrid');
+            agGrid.createGrid(myGridElement,gridOptions);
+    
+            // gridApi.sizeColumnsToFit()
+            // gridApi.setRowData(dd)
+            // new agGrid.Grid(myGridElement,gridOptions)
+    
+            // document.addEventListener('DOMContentLoaded', function() {
+            //     // var eGridDiv = document.querySelector('#myGrid');
+            //     new agGrid.Grid(myGridElement, gridOptions);
+            // });
+</script>
+<script type="text/javascript">
+
+     // const dd = JSON.parse('{{ data|escapejs }}');
+
+     const ml = JSON.parse('{{model_list|escapejs}}')
+     const pl = JSON.parse('{{price_list|escapejs}}')
+$(function(){
+
+    var pll =  [{
+        name:'price',
+        data:pl
+    }]
+
+    Highcharts.chart('conatiner', {
+        chart : { type : 'bar'},
+
+        title : { text : 'Models Price' },
+        // subtitle : { text: 'bar chart' },
+
+        xAxis : { categories : ml },
+
+        yAxis : { title : {text : 'Price' }},
+
+        series :  pll,
+
+
+        });
+
+    });
+</script>        
+</body>
+</html>

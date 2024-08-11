@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+</head>
+<body>
+<!-- <form method="post"> -->
+	<button type="submit" id='btn'>Click Me!</button>
+	<div id='mydiv'></div>
+	<p class="intro">First P with class intro</p>
+	<p class="intro">Second P with class intro</p>
+	
+<!-- </form> -->
+	<script type="text/javascript">
+	document.getElementById('btn').onclick = function(){
+		let data = document.querySelectorAll('p.intro')
+		document.getElementById('mydiv').innerHTML = 'Clicked' ;
+		// console.log(data[0].innerHTML)
+		data.forEach(function(element){
+			console.log(element.innerHTML);
+		});
+	}
+</script>
+
+</body>
+</html>
