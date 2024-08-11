@@ -1,0 +1,15 @@
+6 Aug 2024
+
+1. create tables - done
+2. store questions and answers in tables - done
+3. show QNA - done
+
+7 Aug 2024
+
+1. combine all html pages - dont use blocks - done
+2. implement javascript fetch api to load qna - running
+    a. set urls - 
+    b. code views to send json formatted data - 
+    c. load that json - *
+    d. display that data - 
+3. implement threads - 
