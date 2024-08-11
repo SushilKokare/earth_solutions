@@ -1,0 +1,33 @@
+{% extends 'chatapp/base.html' %}
+
+
+
+{% block history-links %}
+{% endblock %}
+
+<script>
+           
+    function scrollToBottom(){
+        var element = document.getElementsByClassName('chatblock');
+        element.scrollTop = element.scrollHeight;
+    }
+
+    document.addEventListener("DOMContentLoaded",function(){
+        scrollToBottom();
+    });
+   
+</script>
+
+{% block chatblock %}
+{% for row in data %}
+<div class="qna-container">
+<div class="question">
+    <p> <b>Q. {{row.question}}</b></p>
+</div>
+
+<div class="answer">
+    <p><b>Answer:</b>{{row.answer}}</p>
+</div>
+</div>
+{% endfor %}
+{% endblock %}

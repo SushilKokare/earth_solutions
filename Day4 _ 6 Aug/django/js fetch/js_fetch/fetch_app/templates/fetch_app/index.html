@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+<h1>Fetch API in Django</h1>
+<button id='getDataBtn'> Get Data </button>
+<button id='postDataBtn'> Post Data </button>
+<p id='response'></p>
+
+<script type="text/javascript">
+	document.getElementById('getDataBtn').addEventListener('click',() => {
+		// alert('hello')
+		fetch('/get-data/')
+		.then(response => response.json())
+		.then(data => {
+			document.getElementById('response').innerText = JSON.stringify(data);
+		});
+
+	});
+
+	document.getElementById('postDataBtn').addEventListener('click',() => {
+		fetch('/post-data/',{
+			method:'POST',
+			headers: {
+				'content-Type':'application/json'
+			},
+			body: JSON.stringify({message: "Hello from the client !"})
+		})
+		.then(response => response.json())
+		.then(data => {
+			document.getElementById('response').innerText = JSON.stringify(data);
+		});
+
+	});
+
+
+</script>
+</body>
+</html>

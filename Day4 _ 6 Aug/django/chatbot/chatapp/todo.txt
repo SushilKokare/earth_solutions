@@ -1,0 +1,29 @@
+1. create tables - done
+2. store questions and answers in tables - on going 
+3. show QNA - 
+
+
+extra:
+
+code in history.html
+<!-- {% block chatblock %} 
+ 
+    <table>
+        <tr>
+            <th>MessageId</th>
+            <th>ThreadId</th>
+            <th>RoleId</th>
+            <th>Question</th>
+            <th>Answer</th>
+        </tr>
+        <tr>
+    {% for row in data %}
+        <td>{{row.msgid}}</td>
+        <td>{{row.threadid}}</td>
+        <td>{{row.roleid}}</td>
+        <td>{{row.question}}</td>
+        <td>{{row.answer}}</td>
+    </tr>
+    {% endfor %}
+    </table>
+    {% endblock %}   -->
